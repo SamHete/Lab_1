@@ -5,7 +5,6 @@ import java.lang.Math;
 public class Lab_1 {
 
 	public static void main(String[] args) {
-		
 		// Allows for user input
 		Scanner input = new Scanner(System.in);
 		
@@ -24,13 +23,11 @@ public class Lab_1 {
 		int SSI = input.nextInt();
 		
 		//declares variable, calculates total amount needed to save for retirement
-		double TotalSaving;
-		TotalSaving = (RetirementIncome-SSI)*((1-(1/(Math.pow(1+(AnnualRetirement*.01)/12,YearsDrawn*12)))))/((AnnualRetirement*.01)/12);
+		double TotalSaving = (RetirementIncome-SSI)*((1-(1/(Math.pow(1+(AnnualRetirement*.01)/12,YearsDrawn*12)))))/((AnnualRetirement*.01)/12);
 
-		
 		//declares variable, calculates amount needed to save each month while working X amount of years
-		double SaveMonthly;
-		SaveMonthly = TotalSaving*(((AnnualReturn*.01)/12)/((Math.pow(1+(AnnualReturn*.01)/12,YearsWorked*12))-1));
+		double SaveMonthly = TotalSaving*(((AnnualReturn*.01)/12)/((Math.pow(1+(AnnualReturn*.01)/12,YearsWorked*12))-1));
+		//Rounds to two decimal places
 		SaveMonthly = (double) (Math.round(SaveMonthly*100.0)/100.0);
 		
 		//prints amount needed to save per years worked
