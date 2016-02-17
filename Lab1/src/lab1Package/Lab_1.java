@@ -25,14 +25,16 @@ public class Lab_1 {
 		
 		//declares variable, calculates total amount needed to save for retirement
 		double TotalSaving;
-		TotalSaving = (RetirementIncome-SSI)*((1-(1/(Math.pow(1+(AnnualRetirement/100)/12,YearsDrawn*12 )))))/((AnnualRetirement/100)/12);
+		TotalSaving = (RetirementIncome-SSI)*((1-(1/(Math.pow(1+(AnnualRetirement*.01)/12,YearsDrawn*12)))))/((AnnualRetirement*.01)/12);
+
 		
 		//declares variable, calculates amount needed to save each month while working X amount of years
 		double SaveMonthly;
-		SaveMonthly = TotalSaving*(((AnnualReturn/100)/12)/((Math.pow(1+(AnnualReturn/100)/12, YearsWorked*12))-1));
+		SaveMonthly = TotalSaving*(((AnnualReturn*.01)/12)/((Math.pow(1+(AnnualReturn*.01)/12,YearsWorked*12))-1));
+		SaveMonthly = (double) (Math.round(SaveMonthly*100.0)/100.0);
 		
 		//prints amount needed to save per years worked
-		System.out.print("You must save $" + SaveMonthly + "per month for " + YearsWorked + " years in order to retire comfortably.");
+		System.out.print("You must save $" + SaveMonthly + " per month for " + YearsWorked + " years in order to retire comfortably.");
 	}
 
 }
